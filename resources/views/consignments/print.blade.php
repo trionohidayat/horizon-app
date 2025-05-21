@@ -71,7 +71,8 @@
         </div>
         <div class="qr">
             @if($consignment->qr_code_path)
-                <img src="{{ asset($consignment->qr_code_path) }}" alt="QR Code">
+                <img src="{!! QrCode::size(140)->generate(route('consignments.show', encrypt($consignment->id))) !!}" alt="QR Code">
+                <!-- <img src="{{ asset($consignment->qr_code_path) }}" alt="QR Code"> -->
             @endif
         </div>
     </div>
