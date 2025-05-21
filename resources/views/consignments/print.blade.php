@@ -69,11 +69,11 @@
                 <div><span class="bold">Total Berat:</span> {{ $consignment->weight }} kg</div>
             </div>
         </div>
-        <div class="qr">
-            @if($consignment->qr_code_path)
-                <img src="{!! QrCode::size(140)->generate(route('consignments.show', encrypt($consignment->id))) !!}" alt="QR Code">
+        <div class="flex justify-center">
+            <!-- @if($consignment->qr_code_path) -->
                 <!-- <img src="{{ asset($consignment->qr_code_path) }}" alt="QR Code"> -->
-            @endif
+            <!-- @endif -->
+                {!! QrCode::size(100)->generate(route('consignments.show', encrypt($consignment->id))) !!}
         </div>
     </div>
 
