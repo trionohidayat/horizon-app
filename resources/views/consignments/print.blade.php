@@ -61,6 +61,7 @@
 <div class="awb-box">
     <div class="header">
         <div class="left-header">
+            
             <div class="bold" style="font-size: 12px;">HORIZON GLOBAL INDAH</div>
             <div>Air Way Bill</div>
             <div class="bold">No: {{ $consignment->consignment_code }}</div>
@@ -69,11 +70,13 @@
                 <div><span class="bold">Total Berat:</span> {{ $consignment->weight }} kg</div>
             </div>
         </div>
+
         <div class="flex justify-center">
-            <!-- @if($consignment->qr_code_path) -->
-                <!-- <img src="{{ asset($consignment->qr_code_path) }}" alt="QR Code"> -->
-            <!-- @endif -->
-                {!! QrCode::size(100)->generate(route('consignments.show', encrypt($consignment->id))) !!}
+            <img src="{{ asset('images/logo-horizon.jpg') }}" alt="Logo" style="height: 70px; margin-right: 20px;">
+        </div>
+        
+        <div class="flex justify-center">
+                {!! QrCode::size(70)->generate(route('consignments.show', encrypt($consignment->id))) !!}
         </div>
     </div>
 
