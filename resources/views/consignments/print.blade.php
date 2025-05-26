@@ -76,6 +76,9 @@
         </div>
         
         <div class="flex justify-center">
+            <!-- @if($consignment->qr_code_path) -->
+                <!-- <img src="{{ asset($consignment->qr_code_path) }}" alt="QR Code"> -->
+            <!-- @endif -->
                 {!! QrCode::size(70)->generate(route('consignments.show', encrypt($consignment->id))) !!}
         </div>
     </div>
